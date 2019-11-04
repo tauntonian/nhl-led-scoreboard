@@ -275,6 +275,12 @@ class MainRenderer:
             time.sleep(0.1)
 
     def _draw_off_day(self):
-        self.draw.text((0, -1), 'NO GAME TODAY', font=self.font_mini)
-        self.canvas.SetImage(self.image, 0, 0)
-        self.canvas = self.matrix.SwapOnVSync(self.canvas)
+        #use random.randrange() to generate random coordinates and redraw text every 5 seconds for 6 hours
+       
+       i = 0
+       while i is not 2600:
+            self.draw.text((0, -1), 'NO GAME TODAY :(', font=self.font_mini)        
+            self.canvas.SetImage(self.image, random.randrange(0,16), random.randrange(0,25))
+            self.canvas = self.matrix.SwapOnVSync(self.canvas)
+            time.sleep(5)
+            i += 1
