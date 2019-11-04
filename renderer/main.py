@@ -285,3 +285,4 @@ class MainRenderer:
             self.canvas = self.matrix.SwapOnVSync(self.canvas)
             time.sleep(5)
             i += 1
+            self.canvas.Clear()
