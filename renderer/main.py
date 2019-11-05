@@ -5,6 +5,7 @@ from calendar import month_abbr
 from renderer.screen_config import screenConfig
 import time
 import debug
+import random
 
 class MainRenderer:
     def __init__(self, matrix, data):
@@ -276,10 +277,12 @@ class MainRenderer:
 
     def _draw_off_day(self):
         #use random.randrange() to generate random coordinates and redraw text every 5 seconds for 6 hours
+
        i = 0
        while i is not 520:
-            self.draw.text((0, -1), 'NO GAME TODAY :(', font=self.font_mini)        
-            self.canvas.SetImage(self.image, random.randrange(0,14), random.randrange(0,25))
+            self.draw.text((0, -1), 'NO GAME TODAY :(', font=self.font_mini)
+            self.canvas.SetImage(self.image, random.randrange(0,16), random.randrange(0,25))
             self.canvas = self.matrix.SwapOnVSync(self.canvas)
             time.sleep(5)
             i += 1
+            self.canvas.Clear()
