@@ -103,7 +103,7 @@ First thing first, find your fav team's id number.
 
 
 Open the config.json file from the root folder and change the `"fav_team_id"` to your favorite team's id. This will make the scoreboard to fallow
-your team by default. Otherwise... GO HABS GO !!!!
+your team by default. Otherwise... Habs suck, GO BRUINS!!
 
 Now, in a terminal, cd to the nhl-led-scoreboard folder and run this command. 
 ```
