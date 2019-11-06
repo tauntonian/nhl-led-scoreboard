@@ -3,8 +3,6 @@ from rgbmatrix import graphics
 from utils import center_text
 from renderer.screen_config import screenConfig
 
-DrawOffDay.test()
-
 class DrawOffDay:
     """docstring for ."""
 
