@@ -6,6 +6,8 @@ from renderer.screen_config import screenConfig
 import time
 import debug
 import random
+import sys
+
 
 class MainRenderer:
     def __init__(self, matrix, data):
@@ -280,9 +282,13 @@ class MainRenderer:
 
        i = 0
        while i is not 520:
+           try:
             self.draw.text((0, -1), 'NO GAME TODAY :(', font=self.font_mini)
-            self.canvas.SetImage(self.image, random.randrange(0,16), random.randrange(0,25))
+            self.canvas.SetImage(self.image, random.randrange(0,14), random.randrange(0,25))
             self.canvas = self.matrix.SwapOnVSync(self.canvas)
             time.sleep(5)
             i += 1
             self.canvas.Clear()
+           except KeyboardInterrupt:
+               print('Exiting...')
+               sys.exit(0)
