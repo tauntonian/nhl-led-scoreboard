@@ -1,0 +1,11 @@
+TODO:
+create a "cycle" mode to cycle through active games of the DAY
+  run script for each "fav-team"
+    if "no game today :(" then skip
+    else draw standard pre-game/in-game screen for ?1 minute?
+
+realtime running game clock
+countdown to game time
+shots on goal counter (if API provides)
+more goal animations/videos
+cleaner "no game today" message
