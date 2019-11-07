@@ -281,14 +281,15 @@ class MainRenderer:
         #use random.randrange() to generate random coordinates and redraw text every 5 seconds for 6 hours
 
        i = 0
-       while i is not 520:
+       while i is not 720:
            try:
             self.draw.text((0, -1), 'NO GAME TODAY :(', font=self.font_mini)
-            self.canvas.SetImage(self.image, random.randrange(0,14), random.randrange(0,25))
+            self.canvas.SetImage(self.image, random.randrange(0,10), random.randrange(0,25))
             self.canvas = self.matrix.SwapOnVSync(self.canvas)
-            time.sleep(5)
+            time.sleep(30)
             i += 1
             self.canvas.Clear()
            except KeyboardInterrupt:
                print('Exiting...')
                sys.exit(0)
+
