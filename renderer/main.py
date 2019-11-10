@@ -180,6 +180,10 @@ class MainRenderer:
                 self.image = Image.new('RGB', (self.width, self.height))
                 self.draw = ImageDraw.Draw(self.image)
 
+                # Check if the period is over
+                if data.get_end_of_period():
+                    debug.info('End of Period check successful')
+                    self.draw_end_of_period()
 
                 # Check if the game is over
                 if overview['game_status'] == 6 or overview['game_status'] == 7:
@@ -251,6 +255,34 @@ class MainRenderer:
             self.draw.line((0, 0) + (self.width, 0), fill=128)
             self.canvas = self.matrix.SwapOnVSync(self.canvas)
             time.sleep(60)  # sleep for 1 min
+    
+    def _draw_end_of_period(self):
+
+        if 
+
+        debug.info('The period has ended')
+        # Load the gif file
+        im = Image.open("Assets/end_of_period_light_animation.gif")
+        # Set the frame index to 0
+        frameNo = 0
+        
+        self.canvas.Clear()
+
+        # Go through the frames
+        x = 0
+        while x is not 5:
+            try:
+                im.seek(frameNo)
+            except EOFError:
+                x += 1
+                frameNo = 0
+                im.seek(frameNo)
+
+            self.canvas.SetImage(im.convert('RGB'), 0, 0)
+            self.canvas = self.matrix.SwapOnVSync(self.canvas)
+            frameNo += 1
+            time.sleep(0.1)
+
 
     def _draw_goal(self):
 

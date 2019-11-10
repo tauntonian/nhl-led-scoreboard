@@ -29,7 +29,8 @@ class Data:
         # Look if favorite team play today
         self.refresh_fav_team_status()
 
-
+        # Check if period has ended
+        self.get_end_of_period()
 
     def __parse_today(self):
         today = datetime.today()
@@ -57,3 +58,9 @@ class Data:
 
     def check_fav_team_next_game(self):
         pass
+    
+    def get_end_of_period(self):
+        if nhlparser.fetch_live_stats is not None:
+            return False
+        else:
+            return True

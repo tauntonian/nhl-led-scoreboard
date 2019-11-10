@@ -54,6 +54,7 @@ def fetch_live_stats(link):
             time_remaining = stuff['liveData']['linescore']['currentPeriodTimeRemaining']
         except KeyError:
             time_remaining = "00:00"
+        print (str(current_period), str(home_sog), str(away_sog), str(home_powerplay), str(away_powerplay), str(time_remaining))
         return current_period, home_sog, away_sog, home_powerplay, away_powerplay, time_remaining
     except requests.exceptions.RequestException:
         print("Error encountered, Can't reach the NHL API")
