@@ -8,4 +8,4 @@ realtime running game clock
 countdown to game time
 shots on goal counter (if API provides)
 more goal animations/videos
-cleaner "no game today" message
+
