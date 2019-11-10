@@ -182,14 +182,14 @@ def fetch_game_time(team_id):
 
         return scheduled_game_time
 
-def check_season():
-    """ Function to check if in season. Returns True if in season, False in off season. """
-    # Get current time
-    now = datetime.datetime.now()
-    if now.month in (7, 8):
-        return False
-    else:
-        return True
+#def check_season():
+#    """ Function to check if in season. Returns True if in season, False in off season. """
+#    # Get current time
+#    now = datetime.datetime.now()
+#    if now.month in (7, 8):
+#        return False
+#    else:
+#        return True
 
 
 def check_if_game(team_id):
