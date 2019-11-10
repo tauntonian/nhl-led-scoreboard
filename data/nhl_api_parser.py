@@ -181,15 +181,17 @@ def fetch_game_time(team_id):
         scheduled_game_time = {'game_time': game_time}
 
         return scheduled_game_time
+    except KeyError:
+        print("missing data from the game. Game has not begun or is not scheduled today.")
 
-#def check_season():
-#    """ Function to check if in season. Returns True if in season, False in off season. """
-#    # Get current time
-#    now = datetime.datetime.now()
-#    if now.month in (7, 8):
-#        return False
-#    else:
-#        return True
+def check_season():
+    """ Function to check if in season. Returns True if in season, False in off season. """
+    # Get current time
+    now = datetime.datetime.now()
+    if now.month in (7, 8):
+        return False
+    else:
+        return True
 
 
 def check_if_game(team_id):
