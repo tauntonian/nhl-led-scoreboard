@@ -44,11 +44,11 @@ class MainRenderer:
         if self.data.fav_team_game_today == 1:
             debug.info('Scheduled State')
             self._draw_pregame()
-            time.sleep(1800)
+            time.sleep(60) # changed to update every hour for countdown effect
         elif self.data.fav_team_game_today == 2:
             debug.info('Pre-Game State')
             self._draw_pregame()
-            time.sleep(60)
+            time.sleep(1) # changed to update every second for countdown effect
         elif (self.data.fav_team_game_today == 3) or (self.data.fav_team_game_today == 4):
             debug.info('Live State')
             # Draw the current game
@@ -75,6 +75,9 @@ class MainRenderer:
             # Save when the game start
             game_time = overview['game_time']
 
+            # Countdown to game start
+            game_time_countdown
+
             # Center the game time on screen.
             game_time_pos = center_text(self.font_mini.getsize(game_time)[0], 32)
 
@@ -88,7 +91,7 @@ class MainRenderer:
 
             # Draw the text on the Data image.
             self.draw.text((22, -1), 'TODAY', font=self.font_mini)
-            self.draw.multiline_text((game_time_pos, 5), game_time, fill=(255, 255, 255), font=self.font_mini, align="center")
+            self.draw.multiline_text((game_time_pos, 5), game_time, fill=(255, 255, 255), font=self.font_mini, align="center") #insert countdown var here
             self.draw.text((25, 13), 'VS', font=self.font)
 
             # Put the data on the canvas

@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import time as t
 import nhl_api_parser as nhlparser
 
 class Data:
@@ -64,3 +65,22 @@ class Data:
             return False
         else:
             return True
+   
+    # This is probably wrong, but let's see if it works
+    def countdown(self):
+        def dateDiffInSeconds(date1, date2):
+            timedelta = date2 - date1
+            return timedelta.days * 24 * 3600 + timedelta.seconds
+
+        def daysHoursMinutesSecondsFromSeconds(seconds):
+            minutes, seconds = divmod(seconds, 60)
+            hours, minutes = divmod(minutes, 60)
+            return (hours, minutes, seconds)
+
+        gameStart = datetime.strptime(nhlparser.fetch_game_time, '%H:%M:%S')
+        now = datetime.now()
+
+        while gameStart>now:
+            print ("%dh %dm %ds" % daysHoursMinutesSecondsFromSeconds(dateDiffInSeconds(now, gameStart)))
+            t.sleep(1)
+            now = datetime.now()

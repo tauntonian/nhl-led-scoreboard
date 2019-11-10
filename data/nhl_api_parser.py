@@ -156,7 +156,7 @@ def fetch_fav_team_schedule(team_id):
         home_team_id = int(game_data['dates'][0]['games'][0]['teams']['home']['team']['id'])
         away_team_id = int(game_data['dates'][0]['games'][0]['teams']['away']['team']['id'])
 
-        game_time = convert_time(game_data["dates"][0]["games"][0]["gameDate"]).strftime("%I:%M")
+        game_time = convert_time(game_data["dates"][0]["games"][0]["gameDate"]).strftime("%H:%M") # changed to 24-hour format [use %I for 12-hour]
 
         current_game_schedule = {'home_team_id': home_team_id, 'away_team_id': away_team_id, 'game_time': game_time}
 
@@ -167,6 +167,20 @@ def fetch_fav_team_schedule(team_id):
     except KeyError:
         print("missing data from the game. Game has not begun or is not scheduled today.")
 
+def fetch_game_time(team_id):
+    """ Function to get the game time only. """
+    #Set URL depending on team selected
+    url = url = '{0}schedule?teamId={1}'.format(NHL_API_URL, team_id)
+
+    try:
+        game_data = requests.get(url)
+        game_data = game_data.json()
+
+        game_time = convert_time(game_data["dates"][0]["games"][0]["gameDate"]).strftime("%H:%M:$S")
+
+        scheduled_game_time = {'game_time': game_time}
+
+        return scheduled_game_time
 
 def check_season():
     """ Function to check if in season. Returns True if in season, False in off season. """
