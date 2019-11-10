@@ -258,8 +258,6 @@ class MainRenderer:
     
     def _draw_end_of_period(self):
 
-        if 
-
         debug.info('The period has ended')
         # Load the gif file
         im = Image.open("Assets/end_of_period_light_animation.gif")
