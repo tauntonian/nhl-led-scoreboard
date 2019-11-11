@@ -143,7 +143,7 @@ class MainRenderer:
 
                 # Use this code if you want the goal animation to run for both team's goal.
                 # Run the goal animation if there is a goal.
-                if overview['home_score'] > home_score or overview['away_score'] > away_score:
+                if overview['home_score'] > home_score or overview['away_score'] > away_score:  # audio possible insertion point
                    self._draw_goal()
 
                 # Prepare the data
@@ -184,7 +184,7 @@ class MainRenderer:
                 self.draw = ImageDraw.Draw(self.image)
 
                 # Check if the period is over
-                if data.get_end_of_period():
+                if self.data.get_end_of_period():
                     debug.info('End of Period check successful')
                     self.draw_end_of_period()
 
