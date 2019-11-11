@@ -76,7 +76,7 @@ class MainRenderer:
             game_time = overview['game_time']
 
             # Countdown to game start
-            game_time_countdown = data.countdown()
+            game_time_countdown = self.data.countdown()
 
             # Center the game time on screen.
             game_time_pos = center_text(self.font_mini.getsize(game_time)[0], 32)
