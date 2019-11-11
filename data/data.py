@@ -82,5 +82,8 @@ class Data:
 
         while gameStart>now:
             print ("%dh %dm %ds" % daysHoursMinutesSecondsFromSeconds(dateDiffInSeconds(now, gameStart)))
+            remaining_time = "%dh %dm %ds" % daysHoursMinutesSecondsFromSeconds(dateDiffInSeconds(now, gameStart))
             t.sleep(1)
             now = datetime.now()
+            return remaining_time
+            

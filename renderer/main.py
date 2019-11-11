@@ -76,7 +76,7 @@ class MainRenderer:
             game_time = overview['game_time']
 
             # Countdown to game start
-            game_time_countdown
+            game_time_countdown = data.countdown()
 
             # Center the game time on screen.
             game_time_pos = center_text(self.font_mini.getsize(game_time)[0], 32)
@@ -91,7 +91,7 @@ class MainRenderer:
 
             # Draw the text on the Data image.
             self.draw.text((22, -1), 'TODAY', font=self.font_mini)
-            self.draw.multiline_text((game_time_pos, 5), game_time, fill=(255, 255, 255), font=self.font_mini, align="center") #insert countdown var here
+            self.draw.multiline_text((game_time_pos, 5), game_time_countdown, fill=(255, 255, 255), font=self.font_mini, align="center") #insert countdown var here
             self.draw.text((25, 13), 'VS', font=self.font)
 
             # Put the data on the canvas
