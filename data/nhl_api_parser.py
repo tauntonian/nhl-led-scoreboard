@@ -176,7 +176,7 @@ def fetch_game_time(team_id):
         game_data = requests.get(url)
         game_data = game_data.json()
 
-        game_time = convert_time(game_data["dates"][0]["games"][0]["gameDate"]).strftime("%H:%M:$S")
+        game_time = convert_time(game_data["dates"][0]["games"][0]["gameDate"]).strftime("%H:%M")
 
         print(str(game_time))
         scheduled_game_time = {'game_time': game_time}
