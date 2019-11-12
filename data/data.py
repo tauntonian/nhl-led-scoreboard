@@ -77,7 +77,8 @@ class Data:
             hours, minutes = divmod(minutes, 60)
             return (hours, minutes, seconds)
 
-        gameStart = datetime.strptime(nhlparser.fetch_game_time, '%H:%M:%S')
+        game_time = nhlparser.fetch_game_time
+        gameStart = datetime.strptime(game_time, '%H:%M:%S')
         now = datetime.now()
 
         while gameStart>now:
