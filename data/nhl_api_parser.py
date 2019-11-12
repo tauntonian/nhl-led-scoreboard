@@ -178,9 +178,10 @@ def fetch_game_time(team_id):
 
         game_time = convert_time(game_data["dates"][0]["games"][0]["gameDate"]).strftime("%H:%M:$S")
 
-        scheduled_game_time = str({'game_time': game_time})
+        scheduled_game_time = {'game_time': game_time}
+        scheduled_game_time_str = str(scheduled_game_time)
 
-        return scheduled_game_time
+        return scheduled_game_time_str
     except KeyError:
         print("missing data from the game. Game has not begun or is not scheduled today.")
 
