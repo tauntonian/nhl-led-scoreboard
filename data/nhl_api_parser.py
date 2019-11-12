@@ -178,6 +178,7 @@ def fetch_game_time(team_id):
 
         game_time = convert_time(game_data["dates"][0]["games"][0]["gameDate"]).strftime("%H:%M:$S")
 
+        print(str(game_time))
         scheduled_game_time = {'game_time': game_time}
         scheduled_game_time_str = str(scheduled_game_time)
 
