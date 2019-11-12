@@ -168,13 +168,16 @@ def fetch_fav_team_schedule(team_id):
         print("missing data from the game. Game has not begun or is not scheduled today.")
 
 def fetch_game_time(team_id):
-    """ Function to get the game time only. """
-    #Set URL depending on team selected
-    url = url = '{0}schedule?teamId={1}'.format(NHL_API_URL, team_id)
+    """ Function to get the selected team game time only. """
+    # Set URL depending on team selected
+    url = '{0}schedule?teamId={1}'.format(NHL_API_URL, team_id)
 
     try:
         game_data = requests.get(url)
         game_data = game_data.json()
+
+        home_team_id = int(game_data['dates'][0]['games'][0]['teams']['home']['team']['id'])
+        away_team_id = int(game_data['dates'][0]['games'][0]['teams']['away']['team']['id'])
 
         game_time = convert_time(game_data["dates"][0]["games"][0]["gameDate"]).strftime("%H:%M")
 
