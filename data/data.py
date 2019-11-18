@@ -78,7 +78,8 @@ class Data:
             return (hours, minutes, seconds)
 
         game_time = str(nhlparser.fetch_game_time)
-        gameStart = datetime.strptime(game_time, '%H:%M:%S')
+        gameStart = datetime.strptime('19:00:00', '%H:%M:%S')
+        #gameStart = datetime.strptime(game_time, '%H:%M:%S')
         now = datetime.now()
 
         while gameStart>now:
