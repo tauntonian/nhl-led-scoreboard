@@ -88,7 +88,8 @@ class Data:
             t.sleep(1)
             now = datetime.now()
             if remaining_time is not None:
-                print ("Error with remaining_time, trying again in 60 seconds...")
+                countdownError = "Error with remaining_time, trying again in 60 seconds..."
+                return countdownError
                 t.sleep(60)
             else:
                 return remaining_time
