@@ -87,5 +87,9 @@ class Data:
             remaining_time = "%dh %dm %ds" % daysHoursMinutesSecondsFromSeconds(dateDiffInSeconds(now, gameStart))
             t.sleep(1)
             now = datetime.now()
-            return remaining_time
+            if remaining_time is not None:
+                print ("Error with remaining_time, trying again in 60 seconds...")
+                t.sleep(60)
+            else:
+                return remaining_time
             
