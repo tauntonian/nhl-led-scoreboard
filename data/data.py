@@ -87,10 +87,12 @@ class Data:
             remaining_time = "%dh %dm %ds" % daysHoursMinutesSecondsFromSeconds(dateDiffInSeconds(now, gameStart))
             t.sleep(1)
             now = datetime.now()
+            i = 60
             if remaining_time is not None:
-                countdownError = "Error with remaining_time, trying again in 60 seconds..."
+                countdownError = "Error" + str(i)
                 return countdownError
-                t.sleep(60)
+                i -= 1
+                t.sleep(1)
             else:
                 return remaining_time
             
