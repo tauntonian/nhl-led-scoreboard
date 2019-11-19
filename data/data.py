@@ -33,8 +33,6 @@ class Data:
         # Check if period has ended
         self.get_end_of_period()
 
-        # Begin countdown
-        self.countdown()
 
     def __parse_today(self):
         today = datetime.today()
