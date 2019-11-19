@@ -90,9 +90,9 @@ class Data:
             i = 60
             if remaining_time is not None:
                 countdownError = "Error" + str(i)
-                return countdownError
                 i -= 1
                 t.sleep(1)
+                return countdownError
             else:
                 return remaining_time
             
