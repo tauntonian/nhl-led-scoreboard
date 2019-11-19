@@ -68,6 +68,12 @@ class Data:
    
     # This is probably wrong, but let's see if it works
     def countdown(self):
+
+        game_time = str(nhlparser.fetch_game_time)
+        gameStart = datetime.strptime('19:00:00', '%H:%M:%S')
+        #gameStart = datetime.strptime(game_time, '%H:%M:%S')
+        now = datetime.now()
+
         def dateDiffInSeconds(date1, date2):
             timedelta = date2 - date1
             return timedelta.days * 24 * 3600 + timedelta.seconds
@@ -77,22 +83,11 @@ class Data:
             hours, minutes = divmod(minutes, 60)
             return (hours, minutes, seconds)
 
-        game_time = str(nhlparser.fetch_game_time)
-        gameStart = datetime.strptime('19:00:00', '%H:%M:%S')
-        #gameStart = datetime.strptime(game_time, '%H:%M:%S')
-        now = datetime.now()
-
         while gameStart>now:
             print ("%dh %dm %ds" % daysHoursMinutesSecondsFromSeconds(dateDiffInSeconds(now, gameStart)))
             remaining_time = "%dh %dm %ds" % daysHoursMinutesSecondsFromSeconds(dateDiffInSeconds(now, gameStart))
             t.sleep(1)
             now = datetime.now()
             i = 60
-            if remaining_time is not None:
-                countdownError = "Error" + str(i)
-                i -= 1
-                t.sleep(1)
-                return countdownError
-            else:
-                return remaining_time
+            return remaining_time
             
