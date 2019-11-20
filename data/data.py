@@ -71,24 +71,24 @@ class Data:
     def countdown(self):
 
         game_time = str(nhlparser.fetch_game_time)
-        gameStart = datetime.strptime('19:00:00', '%H:%M:%S')
-        #gameStart = datetime.strptime(game_time, '%H:%M:%S')
-        now = datetime.now()
+        #gameStart = datetime.strptime('19:00:00', '%H:%M:%S')
+        ##gameStart = datetime.strptime(game_time, '%H:%M:%S')
+        #now = datetime.now()
 
-        def dateDiffInSeconds(date1, date2):
-            timedelta = date2 - date1
-            return timedelta.days * 24 * 3600 + timedelta.seconds
+        #def dateDiffInSeconds(date1, date2):
+        #    timedelta = date2 - date1
+        #    return timedelta.days * 24 * 3600 + timedelta.seconds
 
-        def daysHoursMinutesSecondsFromSeconds(seconds):
-            minutes, seconds = divmod(seconds, 60)
-            hours, minutes = divmod(minutes, 60)
-            return (hours, minutes, seconds)
+        #def daysHoursMinutesSecondsFromSeconds(seconds):
+        #    minutes, seconds = divmod(seconds, 60)
+        #    hours, minutes = divmod(minutes, 60)
+        #    return (hours, minutes, seconds)
 
-        while gameStart>now:
-            print ("%dh %dm %ds" % daysHoursMinutesSecondsFromSeconds(dateDiffInSeconds(now, gameStart)))
-            #remaining_time = "%dh %dm %ds" % daysHoursMinutesSecondsFromSeconds(dateDiffInSeconds(now, gameStart))
-            remaining_time = "5:00"
-            t.sleep(1)
-            now = datetime.now()
-            return remaining_time
-            
+        #while gameStart>now:
+        #    print ("%dh %dm %ds" % daysHoursMinutesSecondsFromSeconds(dateDiffInSeconds(now, gameStart)))
+        #    #remaining_time = "%dh %dm %ds" % daysHoursMinutesSecondsFromSeconds(dateDiffInSeconds(now, gameStart))
+        #    remaining_time = "5:00"
+        #    t.sleep(1)
+        #    now = datetime.now()
+        #    return remaining_time
+        return game_time
