@@ -70,7 +70,7 @@ class Data:
     # This is probably wrong, but let's see if it works
     def countdown(self):
 
-        game_time = str(nhlparser.fetch_game_time)
+        game_time = nhlparser.fetch_game_time
         #gameStart = datetime.strptime('19:00:00', '%H:%M:%S')
         ##gameStart = datetime.strptime(game_time, '%H:%M:%S')
         #now = datetime.now()
