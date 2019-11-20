@@ -94,7 +94,7 @@ class MainRenderer:
             self.draw.text((22, -1), 'TODAY', font=self.font_mini)
             print (str(game_time_countdown))
             time.sleep(10)
-            self.draw.text((game_time_pos, 5), game_time_countdown, fill=(255, 255, 255), font=self.font_mini, align="center") #insert countdown var here
+            self.draw.text((game_time_pos, 5), game_time, fill=(255, 255, 255), font=self.font_mini, align="center") #insert countdown var here
             self.draw.text((25, 13), 'VS', font=self.font)
 
             # Put the data on the canvas
