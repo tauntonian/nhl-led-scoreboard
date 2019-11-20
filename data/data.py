@@ -71,6 +71,8 @@ class Data:
     def countdown(self):
 
         game_time = nhlparser.fetch_game_time
+        print(game_time)
+        t.sleep(5)
         #gameStart = datetime.strptime('19:00:00', '%H:%M:%S')
         ##gameStart = datetime.strptime(game_time, '%H:%M:%S')
         #now = datetime.now()
