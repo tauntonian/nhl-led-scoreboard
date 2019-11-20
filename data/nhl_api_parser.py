@@ -1,5 +1,6 @@
 import requests
 import datetime
+import debug
 from utils import convert_time
 
 NHL_API_URL = "http://statsapi.web.nhl.com/api/v1/"
@@ -181,7 +182,7 @@ def fetch_game_time(team_id):
 
         game_time = convert_time(game_data["dates"][0]["games"][0]["gameDate"]).strftime("%H:%M:%S")
 
-        print(str(game_time))
+        debug.info(str(game_time))
         scheduled_game_time = {'game_time': game_time}
         scheduled_game_time_str = str(scheduled_game_time)
 
