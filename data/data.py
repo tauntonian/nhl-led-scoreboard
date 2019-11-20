@@ -62,7 +62,7 @@ class Data:
         pass
     
     def get_end_of_period(self):
-        if nhlparser.fetch_live_stats is not None:  # (This is probably wrong) Not sure what to look for here - need to look into how the parser returns this info
+        if nhlparser.fetch_live_stats is not None:  # TODO: (This is probably wrong) Not sure what to look for here - need to look into how the parser returns this info
             return False
         else:
             return True
